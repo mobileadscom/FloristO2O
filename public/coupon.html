@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+	<title>Golden Bowl Voucher</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+  	<meta name="description" content="Golden Bowl Voucher" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="Golden Bowl Voucher" />
+    <meta property="twitter:description" content="Golden Bowl Voucher" />
+    <meta property="twitter:image" content="https://goldenbowl.o2oplatform.com/card.png" />
+    <meta property="twitter:url" content="https://goldenbowl.o2oplatform.com/coupon.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Golden Bowl Voucher" />
+    <meta property="og:description" content="Golden Bowl Voucher" />
+    <meta property="og:image" content="https://goldenbowl.o2oplatform.com/card.png" />
+    <meta property="og:url" content="https://goldenbowl.o2oplatform.com/coupon.html" />
+    <script type="text/javascript">
+		function queryParams() {
+			  var query_string = {};
+			  var query = window.location.search.substring(1);
+			  var vars = query.split("&");
+			  for (var i=0;i<vars.length;i++) {
+			      var pair = vars[i].split("=");
+			      // If first entry with this name
+			      if (typeof query_string[pair[0]] === "undefined") {
+			          query_string[pair[0]] = pair[1];
+			      // If second entry with this name
+			      } else if (typeof query_string[pair[0]] === "string") {
+			          var arr = [ query_string[pair[0]], pair[1] ];
+			          query_string[pair[0]] = arr;
+			      // If third or later entry with this name
+			      } else {
+			          query_string[pair[0]].push(pair[1]);
+			      }
+			  } 
+			  return query_string;
+		}
+
+    	function getRndInteger(min, max) {
+		    return Math.floor(Math.random() * (max - min) ) + min;
+		}
+
+		function getLocalUser() {
+			// refer storage.js 
+			var storageName = 'o2o_rma';
+			var storageKey = 'goldenBowl';
+
+			// refer config.js
+			var source = qparams.source || 'dumSource';
+
+			if (window.localStorage.getItem(storageName)) {
+				try {
+					let dataObj = JSON.parse(window.localStorage.getItem(storageName))
+					if (dataObj[storageKey] && dataObj[storageKey][source]) {
+						return dataObj[storageKey][source]
+					}
+					else {
+						return {}
+					}			
+				}
+				catch(err) {
+					return {}
+				}
+			}
+			else {
+				return {}
+			}
+		}
+		
+		var userType = '{{userType}}'
+		function hasVisited() {
+			var localUserData = getLocalUser();
+			if (localUserData.id) {
+				if (localUserData.id == qparams.userId) {
+					userType = localUserData.type;
+				}
+
+				if (localUserData.trackedPages.indexOf('coupon') > -1) {
+					return true;
+				}
+				else {
+					return false;
+				}
+			}
+			else {
+				return false
+			}
+			
+		}
+
+    	// refer config.js
+    	var firedImp = false;
+		function trackImp() {
+			var campaignId = 'df9fa8c87d2ab84e1f1893d7484908a9';
+			var adUserId = '3354';
+			var generalUrl = 'https://track.richmediaads.com/a/analytic.htm?pageLoadId={{cb}}&userId={{adUserId}}&campaignId={{campaignId}}&type={{type}}&value={{value}}&uniqueId={{userId}}&userType={{userType}}&source={{source}}&tc=o2o';
+			var trackingUrl = generalUrl.replace('{{campaignId}}', campaignId).replace('{{adUserId}}', adUserId).replace('{{cb}}', pgId).replace('{{source}}', qparams.utm_source || '{{source}}').replace('{{userId}}', qparams.userId || '{{userId}}').replace('{{userType}}', userType);
+		    var type = 'imp_coupon';
+		    var src = trackingUrl.replace('{{type}}', type);
+		    if (window.location.hostname.indexOf('localhost') > -1) {
+		    	if (!visited) {
+				    console.log(src);
+				    firedImp = true;
+				}
+			}
+			else {
+				if (!visited) {
+					var pixel = document.createElement('img');
+					pixel.src = src;
+					document.head.appendChild(pixel);
+					firedImp = true;
+				}
+			}
+		}
+
+		var qparams = queryParams();
+		window.pgId = Date.now().toString() + getRndInteger(10, 99).toString();
+		var visited = hasVisited();
+		trackImp();
+    </script>
+</head>
+<body>    
+   <header>
+  		<div class="header-banner">
+			<img src="images/logo.png" />
+	  	</div>
+	</header>
+	<div class="content">
+		<div class="main-banner">
+			<div class="banner-content">
+				<img src="images/logo.png" style="width: 285px;margin-bottom: 30px;" />
+				<img src="images/main_cp-c.png"/>	
+			</div>
+		</div>
+		<div id="page-wrapper">
+			<div id="loadingPage" class="page" style="height: 500px;">
+			    <div class="loading-block">
+			      <br>LOADING
+			    </div>
+			</div>
+			<div id="joinPage" class="page">
+				<h2>GOLDEN BOWL FREE CASH VOUCHER</h2>
+				<div class="msg-wrapper">
+					Join the campaign to win a free cash voucher
+				</div>
+				<a href="https://demo.o2oplatform.com/goldenBowl/"><button class="primary" style="width: 250px;">Join Campaign</button></a>
+			</div>
+			<div id="instructionPage" class="page">
+				<h2>HOW TO REDEEM YOUR CASH VOUCER</h2>
+				<div class="msg-wrapper" style="padding-top: 5px;">
+					<h2 style="margin: 5px 15px;">Step 1</h2>
+					Go to the nearest store
+				</div>
+				<div class="msg-wrapper" style="padding-top: 5px;">
+					<h2 style="margin: 5px 15px;">Step 2</h2>
+					Open this coupon page
+				</div>
+				<div class="msg-wrapper" style="padding-top: 5px;">
+					<h2 style="margin: 5px 15px;">Step 3</h2>
+					Tap on the "Redeem" button below
+				</div>
+				<div class="msg-wrapper" style="padding-top: 5px;margin-bottom: 5px;">
+					<h2 style="margin: 5px 15px;">Step 4</h2>
+					Show your coupon code to the staff
+				</div>
+				<button class="primary pageBtn" data-target="redeemPage" style="width: 180px;" id="toRedeemPage">Tap To Redeem</button>
+				<div class="dk-footer" style="width: 90%;font-size: 14px;margin: auto;">
+					Only tap this button when you are making payments at the cashier
+				</div>
+			</div>
+			<div id="redeemPage" class="page">
+				<h2>SHOW THIS TO THE CASHIER</h2>
+				<div class="section">
+					<div class="section-title">Select Store Location</div>
+					<div class="location-wrapper">
+						<button class="location track"
+							data-id="New-World-Park"
+							data-tracker="click_loc"
+							data-trackvalue="New-World-Park">
+							New World Park
+						</button>
+						<button class="location track" 
+							data-id="Promenade"
+							data-tracker="click_loc"
+							data-trackvalue="Promenade">
+							Promenade
+						</button>
+					</div>
+				</div>
+				<div id="couponSection" style="display: none;">
+					<div class="section">
+						<div class="section-title">Voucher Code</div>
+						<div class="coupon-code">
+							<div id="couponCode">GBP-5P</div>
+						</div>
+					</div>
+					<button class="primary" style="width: 230px;" disabled id="confirmRedeem">Done Redemption</button>
+					<div id="redeemLoader" class="loader" style="display: none;"></div>
+					<div class="dk-footer" style="width: 90%;font-size: 14px;margin: auto;">
+						Only tap this button when you are making payments at the cashier
+					</div>
+				</div>
+			</div>
+			<div id="donePage" class="page">
+				<h2>YOU HAVE SUCCESSFULLY REDEEMED YOUR CASH VOUCHER</h2>
+				<div class="msg-wrapper" style="font-size: 18px;">
+					Share this with your friends to spread the love
+				</div>
+				<div class="sharer-wrapper">
+					<a href="https://www.facebook.com/sharer/sharer.php?u=https://goldenbowl.o2oplatform.com"
+						target="_blank"
+						class="sharer fb track"
+						data-tracker="share_coupon_fb">
+					</a>
+					<a href="whatsapp://send?text=https://goldenbowl.o2oplatform.com"
+						data-action="share/whatsapp/share"
+						target="_blank"
+						class="sharer wa mobile-sharer track"
+						data-tracker="share_coupon_whatsapp">
+					</a>
+					<a href="fb-messenger://share/?link=https://goldenbowl.o2oplatform.com&app_id=1464196980377441"
+						target="_blank"
+						class="sharer fb-messenger mobile-sharer track"
+						data-tracker="share_coupon_fb_msg">
+					</a>
+					<a href="https://twitter.com/home?status=https://goldenbowl.o2oplatform.com"
+						target="_blank"
+						class="sharer twitter track"
+						data-tracker="share_coupon_twitter">
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer>
+	  	<div class="footer-banner" id="footer-banner">
+	  		<div class="overlay">
+				<div style="position: absolute;left: 50%;top: 50%;transform: translate(-50%, -50%);width: 90%;font-size: 16px;">
+					Only tap this button when you are making payments at the cashier
+				</div>
+	  		</div>
+	      <img src="images/footer-banner.png" />
+	  	</div>
+	</footer>
+</body>
+</html>

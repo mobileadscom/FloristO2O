@@ -1,0 +1,151 @@
+#formSecWrapper {
+  position: relative;
+  width: 100%;
+  padding: 0px 15px;
+}
+
+.modal-content #doneSec, .modal-content #regSec {
+  padding: 15px;
+  height: 210px;
+}
+
+.modal-content #doneSec {
+  display: none;
+}
+
+#regForm {
+  border: 1px solid #FFFFFF;
+  border-radius: 2px;
+  margin: 0px auto;
+  max-width: 350px;
+  padding: 0px 15px;
+}
+
+.form-loader {
+  border: 5px solid #FFFFFF;
+  border-top: 5px solid #FBC802;
+  border-radius: 50%;
+  margin: 20px auto;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+  width: 50px;
+  height: 50px;
+  box-sizing: border-box;
+  display: none;
+}
+
+#emailInput {
+  width: 100%;
+  display: block;
+  margin: 20px auto 0px;
+  max-width: 250px;
+  border-radius: 4px;
+  border: 1px solid #aaa;
+  padding: 8px;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 16px;
+}
+
+#regWorking.form-loader {
+  border: 5px solid #FFFFFF;
+  border-top: 5px solid #FBC802;
+}
+
+/*#followBtn:hover {
+  cursor: pointer;
+}*/
+
+#successFollow {
+  width: 200px;
+  margin: auto;
+  margin-top: 15px;
+  border-radius: 2px;
+  padding: 6px;
+  font-weight: 600;
+  font-size: 16px;
+  -webkit-animation: appearIn 0.3s linear;
+  animation: appearIn 0.3s linear;
+  display: none;
+}
+
+/*#submitBtn {
+  background-color: #C71610;
+  padding: 8px 15px;
+  width: 150px;
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  margin: 20px auto;
+  border: none;
+  border-radius: 5px;
+  font-size: 19px;
+}
+*/
+#regFb {
+  -webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.16), 0 2px 4px rgba(0,0,0,0.23);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.16), 0 2px 4px rgba(0,0,0,0.23);
+  font-weight: 600;
+  color: white;
+  border: 1px solid #30416B;
+  background-color: #3B5999; 
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#3B5999), to(#1A3877));
+  background-image: -webkit-linear-gradient(top, #3B5999, #1A3877);
+  background-image: -moz-linear-gradient(top, #3B5999, #1A3877);
+  background-image: -ms-linear-gradient(top, #3B5999, #1A3877);
+  background-image: -o-linear-gradient(top, #3B5999, #1A3877);
+  background-image: linear-gradient(to bottom, #3B5999, #1A3877);
+  transition: all 0.3s;
+}
+
+#regFb:hover {
+  background-color: #496FBC; 
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#4468AF), to(#224A9B));
+  background-image: -webkit-linear-gradient(top, #4468AF, #224A9B);
+  background-image: -moz-linear-gradient(top, #4468AF, #224A9B);
+  background-image: -ms-linear-gradient(top, #4468AF, #224A9B);
+  background-image: -o-linear-gradient(top, #4468AF, #224A9B);
+  background-image: linear-gradient(to bottom, #4468AF, #224A9B);
+}
+
+#submitBtn:hover {
+  cursor: pointer;
+}
+
+#regButtons {
+  margin-top: 20px;
+}
+
+#regTwitter, #followBtn, #regLine {
+  padding: 8px 15px;
+  width: 250px;
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  /*color: white;*/
+  margin: 0px auto 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 19px;
+}
+
+#regEmail:hover, #regTwitter:hover, #regLine:hover {
+  cursor: pointer;
+}
+
+#regEmail img, #regTwitter img, #followBtn img, #regLine img {
+  width: 24px;
+  vertical-align: middle;
+  margin-right: 15px;
+}
+
+#regEmail {
+  background-color: #C71610;
+}
+
+#regTwitter, #followBtn {
+  background-color: #31AFD5;
+}
+
+#regLine {
+  background-color: #00B900;
+}

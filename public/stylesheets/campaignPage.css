@@ -1,0 +1,193 @@
+@media( min-width: 1px) {
+  #regBanner {
+    width: 220px;
+    margin: 20px 0px;
+  }
+
+  .terms {
+    /*height: 250px;*/
+    font-size: 14px;
+  }
+
+  .terms.sm {
+    height: 200px;
+  }
+  
+  .terms .instruction {
+    font-size: 16px;
+  }
+
+  .terms .points-title:before {
+    height: 15px;
+    width: 15px;
+  }
+
+  .info {
+    font-size: 12px;
+  }
+
+  .info .points-title:before {
+    height: 12px;
+    width: 12px;
+  }
+
+  .intro-image {
+    width: 90%;
+    max-width: 450px;
+  }
+
+  #resultImage {
+    width: 220px;
+  }
+
+  .vid-wrapper {
+    width: 300px;
+    height: 250px;
+  }
+}
+
+@media( min-width: 480px) {
+  .vid-wrapper {
+    width: 100%;
+    height: 300px;
+    max-width: 400px;
+  }
+}
+
+@media( min-width: 768px) {
+  #regBanner {
+    width: 280px;
+    margin-top: 30px;
+  }
+
+  .tnc-wrapper {
+    max-height: 550px;
+    overflow-y: auto;
+  }
+
+  .terms {
+    /*height: 400px;*/
+    font-size: 15px;
+  }
+
+  .terms.sm {
+    height: 250px;
+  }
+
+  .terms .instruction {
+    font-size: 20px;
+  }
+
+  .terms .points-title:before {
+    height: 18px;
+    width: 18px;
+  }
+
+  .info {
+    font-size: 14px;
+  }
+
+  .info .points-title:before {
+    height: 16px;
+    width: 16px;
+  }
+
+  .intro-image {
+    width: 90%;
+    max-width: 600px;
+  }
+
+  #resultImage {
+    width: 350px;
+  }
+}
+
+@media( min-width: 996px) {
+  #resultImage {
+    display: none !important;
+  }
+
+  #regBanner {
+    display: none;   
+  }
+}
+
+.tnc-wrapper {
+  padding: 20px 15px;
+  color: #444;
+  background-color: #FFFFFF;
+}
+
+.terms {
+  /*overflow-y: auto;*/
+  overflow-x: hidden;
+  /*border: 1px solid #AAA;*/
+  /*padding: 12px;*/
+  text-align: left;
+  position: relative;
+  margin: 15px auto 0px;
+}
+
+.terms ul, .terms ol {
+  padding-left: 30px;
+}
+
+.terms li {
+  margin: 10px 0px;
+}
+
+.tnc-wrapper::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+.tnc-wrapper::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+ 
+/* Handle */
+.tnc-wrapper::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 2px;
+}
+
+/* Handle on hover */
+.tnc-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+.page .pagination-wrapper button[disabled], #startSurvey[disabled] {
+  opacity: 0.3;
+}
+
+#resultImage, .intro-image {
+  display: block;
+  margin: 10px auto 0px;
+}
+
+#resultDescription {
+  margin: 10px auto;
+  font-size: 22px;
+  padding: 0px 15px;
+}
+
+#resultInstruction {
+  padding: 0px 15px;
+  font-size: 18px;
+  max-width: 290px;
+  margin: 20px auto;
+}
+
+#couponLink {
+  text-decoration: none;
+}
+
+#regPage, #gamePage, #resultPage, #closePage {
+  display: none;
+}
+
+@media screen and (orientation:landscape) and ( max-width: 995px){
+  #regBanner {
+    display: none !important;
+  }
+}
